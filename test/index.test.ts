@@ -43,7 +43,6 @@ test("README web flow example", async () => {
         client_id: "123",
         client_secret: "secret",
         code: "random123",
-        state: "mystate123",
       },
     }
   );
@@ -64,7 +63,6 @@ test("README web flow example", async () => {
   const authentication = await auth({
     type: "oauth-user",
     code: "random123",
-    state: "mystate123",
   });
 
   expect(authentication).toEqual({
@@ -360,7 +358,6 @@ test("GitHub App", async () => {
         client_id: "lv1.1234567890abcdef",
         client_secret: "1234567890abcdef1234567890abcdef12345678",
         code: "random123",
-        state: "mystate123",
       },
     }
   );
@@ -492,11 +489,11 @@ test("request with custom baseUrl (GHE)", async () => {
   });
 
   expect(authentication).toMatchInlineSnapshot(`
-    Object {
+    {
       "clientId": "123",
       "clientSecret": "secret",
       "clientType": "oauth-app",
-      "scopes": Array [],
+      "scopes": [],
       "token": "secret123",
       "tokenType": "oauth",
       "type": "token",
